@@ -49,30 +49,7 @@ CREATE TABLE IF NOT EXISTS `billets` (
 INSERT INTO `billets` (`id`, `reservation_id`, `trajet_id`, `code_billet`, `prix`, `classe`, `date_emission`) VALUES
 (2, 7, 1, 'TRN20250530131355702', 500.00, 'economique', '2025-05-30 14:13:55'),
 (4, 8, 1, 'TRN20250530184942802', 625.00, 'economique', '2025-05-30 19:49:42'),
-(7, 10, 1, 'TRN202505301950571001', 625.00, 'economique', '2025-05-30 20:50:57'),
-(8, 10, 1, 'TRN202505301950571002', 625.00, 'economique', '2025-05-30 20:50:57'),
-(9, 11, 1, 'TRN202505302208561101', 625.00, 'economique', '2025-05-30 23:08:56'),
-(10, 11, 1, 'TRN202505302208561102', 625.00, 'economique', '2025-05-30 23:08:56'),
-(11, 12, 1, 'TRN202505302304501201', 625.00, 'economique', '2025-05-31 00:04:50'),
-(12, 12, 1, 'TRN202505302304501202', 625.00, 'economique', '2025-05-31 00:04:50'),
-(13, 13, 1, 'TRN202505310825461301', 625.00, 'economique', '2025-05-31 09:25:46'),
-(14, 13, 1, 'TRN202505310825461302', 625.00, 'economique', '2025-05-31 09:25:46'),
-(15, 14, 1, 'TRN202505310832401401', 625.00, 'premiere', '2025-05-31 09:32:40'),
-(16, 14, 1, 'TRN202505310832401402', 625.00, 'premiere', '2025-05-31 09:32:40'),
-(17, 15, 1, 'TRN202505311438061501', 625.00, 'economique', '2025-05-31 15:38:06'),
-(18, 15, 1, 'TRN202505311438061502', 625.00, 'economique', '2025-05-31 15:38:06'),
-(19, 16, 1, 'TRN202505311447381601', 625.00, 'economique', '2025-05-31 15:47:38'),
-(20, 16, 1, 'TRN202505311447381602', 625.00, 'economique', '2025-05-31 15:47:38'),
-(21, 17, 1, 'TRN202505311448551701', 625.00, 'premiere', '2025-05-31 15:48:55'),
-(22, 17, 1, 'TRN202505311448551702', 625.00, 'premiere', '2025-05-31 15:48:55'),
-(23, 18, 1, 'TRN202505311518351801', 625.00, 'economique', '2025-05-31 16:18:35'),
-(24, 18, 1, 'TRN202505311518351802', 625.00, 'economique', '2025-05-31 16:18:35'),
-(25, 19, 1, 'TRN202505311520451901', 625.00, 'economique', '2025-05-31 16:20:45'),
-(26, 19, 1, 'TRN202505311520451902', 625.00, 'economique', '2025-05-31 16:20:45'),
-(27, 20, 1, 'TRN202505311525092001', 625.00, 'premiere', '2025-05-31 16:25:09'),
-(28, 20, 1, 'TRN202505311525092002', 625.00, 'premiere', '2025-05-31 16:25:09'),
-(29, 21, 1, 'TRN202505311615172101', 625.00, 'economique', '2025-05-31 17:15:17'),
-(30, 21, 1, 'TRN202505311615172102', 625.00, 'economique', '2025-05-31 17:15:17');
+
 
 -- --------------------------------------------------------
 
@@ -101,7 +78,6 @@ CREATE TABLE IF NOT EXISTS `demandes_remboursement` (
 INSERT INTO `demandes_remboursement` (`id`, `reservation_id`, `utilisateur_id`, `date_demande`, `date_traitement`, `statut`, `montant_rembourse`) VALUES
 (1, 7, 3, '2025-05-30 14:18:18', '2025-05-30 14:19:11', 'rejected', 0.00),
 (2, 20, 3, '2025-05-31 16:39:59', NULL, 'pending', NULL),
-(3, 18, 4, '2025-05-31 16:42:37', NULL, 'pending', NULL);
 
 -- --------------------------------------------------------
 
@@ -154,12 +130,6 @@ CREATE TABLE IF NOT EXISTS `messages_contact` (
   KEY `utilisateur_id` (`utilisateur_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
---
--- Dumping data for table `messages_contact`
---
-
-INSERT INTO `messages_contact` (`id`, `nom`, `email`, `message`, `date_envoi`, `utilisateur_id`) VALUES
-(1, 'Houda Zouaoui', 'houdazouaoui@gmail.com', 'hii', '2025-05-30 16:34:38', 3);
 
 -- --------------------------------------------------------
 
@@ -185,20 +155,8 @@ CREATE TABLE IF NOT EXISTS `notifications` (
 INSERT INTO `notifications` (`id`, `utilisateur_id`, `content`, `date_creation`, `is_read`) VALUES
 (1, 3, 'Votre réservation #7 a été confirmée avec succès. Montant payé: 1 000 DA', '2025-05-30 14:13:55', 1),
 (2, 3, 'Votre demande d\'annulation a été refusée.', '2025-05-30 14:19:11', 1),
-(3, 3, 'Votre réservation #8 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-30 19:49:42', 1),
-(4, 3, 'Votre réservation #9 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-30 20:10:35', 1),
-(5, 3, 'Votre réservation #10 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-30 20:50:57', 1),
-(6, 3, 'Votre réservation #11 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-30 23:08:56', 1),
-(7, 3, 'Votre réservation #12 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-31 00:04:50', 1),
-(8, 3, 'Votre réservation #13 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-31 09:25:46', 1),
-(9, 3, 'Votre réservation #14 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-31 09:32:40', 1),
-(10, 4, 'Votre réservation #15 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-31 15:38:06', 1),
-(11, 4, 'Votre réservation #16 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-31 15:47:38', 1),
-(12, 4, 'Votre réservation #17 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-31 15:48:55', 1),
-(13, 4, 'Votre réservation #18 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-31 16:18:35', 1),
-(14, 3, 'Votre réservation #19 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-31 16:20:45', 1),
-(15, 3, 'Votre réservation #20 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-31 16:25:09', 1),
-(16, 3, 'Votre réservation #21 a été confirmée avec succès. Montant payé: 1 250 DA', '2025-05-31 17:15:17', 0);
+
+
 
 -- --------------------------------------------------------
 
@@ -226,19 +184,7 @@ CREATE TABLE IF NOT EXISTS `paiements` (
 INSERT INTO `paiements` (`id`, `reservation_id`, `utilisateur_id`, `montant`, `methode`, `date_paiement`) VALUES
 (3, 7, 3, 1000.00, 'carte', '2025-05-30 14:13:55'),
 (4, 8, 3, 1250.00, 'carte', '2025-05-30 19:49:42'),
-(5, 9, 3, 1250.00, 'Edahabia', '2025-05-30 20:10:35'),
-(6, 10, 3, 1250.00, 'carte', '2025-05-30 20:50:57'),
-(7, 11, 3, 1250.00, 'carte', '2025-05-30 23:08:56'),
-(8, 12, 3, 1250.00, 'carte', '2025-05-31 00:04:50'),
-(9, 13, 3, 1250.00, 'carte', '2025-05-31 09:25:46'),
-(10, 14, 3, 1250.00, 'carte', '2025-05-31 09:32:40'),
-(11, 15, 4, 1250.00, 'Edahabia', '2025-05-31 15:38:06'),
-(12, 16, 4, 1250.00, 'carte', '2025-05-31 15:47:38'),
-(13, 17, 4, 1250.00, 'carte', '2025-05-31 15:48:55'),
-(14, 18, 4, 1250.00, 'carte', '2025-05-31 16:18:35'),
-(15, 19, 3, 1250.00, 'carte', '2025-05-31 16:20:45'),
-(16, 20, 3, 1250.00, 'Edahabia', '2025-05-31 16:25:09'),
-(17, 21, 3, 1250.00, 'Edahabia', '2025-05-31 17:15:17');
+
 
 -- --------------------------------------------------------
 
@@ -268,19 +214,7 @@ CREATE TABLE IF NOT EXISTS `reservations` (
 INSERT INTO `reservations` (`id`, `utilisateur_id`, `trajet_id`, `date_reservation`, `nb_passagers`, `classe`, `prix_total`, `statut`) VALUES
 (7, 3, 1, '2025-05-30 14:13:55', 2, '', 1000.00, ''),
 (8, 3, 1, '2025-05-30 19:49:42', 2, '', 1250.00, 'confirmee'),
-(9, 3, 1, '2025-05-30 20:10:35', 2, '', 1250.00, 'confirmee'),
-(10, 3, 1, '2025-05-30 20:50:57', 2, '', 1250.00, 'confirmee'),
-(11, 3, 1, '2025-05-30 23:08:56', 2, '', 1250.00, 'confirmee'),
-(12, 3, 1, '2025-05-31 00:04:50', 2, '', 1250.00, 'confirmee'),
-(13, 3, 1, '2025-05-31 09:25:46', 2, '', 1250.00, 'confirmee'),
-(14, 3, 1, '2025-05-31 09:32:40', 2, '', 1250.00, 'confirmee'),
-(15, 4, 1, '2025-05-31 15:38:06', 2, '', 1250.00, 'confirmee'),
-(16, 4, 1, '2025-05-31 15:47:38', 2, '', 1250.00, 'confirmee'),
-(17, 4, 1, '2025-05-31 15:48:55', 2, '', 1250.00, 'confirmee'),
-(18, 4, 1, '2025-05-31 16:18:35', 2, '', 1250.00, ''),
-(19, 3, 1, '2025-05-31 16:20:45', 2, '', 1250.00, 'confirmee'),
-(20, 3, 1, '2025-05-31 16:25:09', 2, '', 1250.00, ''),
-(21, 3, 1, '2025-05-31 17:15:17', 2, '', 1250.00, 'confirmee');
+
 
 -- --------------------------------------------------------
 
@@ -357,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `trajets` (
 INSERT INTO `trajets` (`id`, `train_id`, `id_gare_depart`, `id_gare_arrivee`, `date_heure_depart`, `date_heure_arrivee`, `prix`, `economique`, `premiere_classe`, `statut`) VALUES
 (1, 1, 1, 9, '2025-06-05 12:00:00', '2025-06-05 13:30:00', 500.00, 90, 10, 'active'),
 (2, 1, 1, 3, '2025-06-10 15:00:00', '2025-06-10 17:30:00', 1000.00, 90, 10, 'active'),
-(3, 1, 1, 2, '2025-06-10 08:00:00', '2025-06-10 20:00:00', 2000.00, 90, 10, 'active');
+
 
 -- --------------------------------------------------------
 
@@ -385,8 +319,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
 
 INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `email`, `telephone`, `mot_de_passe`, `role`, `date_inscription`) VALUES
 (2, 'Sys', 'Admin', 'admin@gmail.com', '0555000000', '$2y$10$6.ZYdTHxutvmbuEtcEMsJOx3ey2xd6XWZ3WpxFjUWSHGZHV4ljAzS', 'admin', '2025-05-27 14:55:16'),
-(3, 'Zouaoui', 'Houda', 'houdazouaoui@gmail.com', '0567327867', '$2y$10$a.4GCamOB3ZC0onKWA.UHeb0dtkEQlGSctQVfZ9cVdvekAIu0rh8K', 'client', '2025-05-27 16:05:39'),
-(4, 'Mehdaoui', 'Rahma', 'mehdaouirahma@gmail.com', '0743895678', '$2y$10$J1lfYGqBAMRI2mf7vG8Pf.06IgoA0oj4gllVIRgM92N96c27wTD5u', 'client', '2025-05-31 12:29:50');
+
 
 --
 -- Constraints for dumped tables
